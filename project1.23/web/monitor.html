@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webled</title>
+    <style>
+        .center {
+            text-align: center;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 align="center">WEBLED</h1>
+    <form action="/cgi-bin/cgi_led.cgi" method="get">
+        <div class="center">
+            <label>
+                LED:
+                <label><input type="radio" name="led_num" value="2" checked>2</label>
+                <label><input type="radio" name="led_num" value="3">3</label>
+                <label><input type="radio" name="led_num" value="4">4</label>
+                <label><input type="radio" name="led_num" value="5">5</label>
+                &nbsp;&nbsp;|&nbsp;
+                <label><input type="radio" name="led_state" value="1" checked>开</label>
+                <label><input type="radio" name="led_state" value="0">关</label>            
+                <input type="submit" value="确定" />
+            </label>
+        </div>
+    </form>
+    <form action="/cgi-bin/cgi_buzzer.cgi" method="get">
+        <div class="center">
+            <label>
+                BUZZER:
+                <label><input type="radio" name="buzzer_state" value="1" checked>开</label>
+                <label><input type="radio" name="buzzer_state" value="0">关</label>            
+                <input type="submit" value="确定" />
+            </label>
+        </div>
+    </form>
+    <table width="500" height="500" border="1" align="center">
+        <tr>
+            <td width="432"><iframe src="cgi-bin/cgi_refresh.cgi" height="500" width="500" align="center"></iframe></td>
+        </tr>
+    </table>
+</body>
+
+</html>
