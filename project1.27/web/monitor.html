@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能监控系统</title>
+    <link rel="stylesheet" href="./monitor.css">
+</head>
+
+<body style="background-color: #E3CDB9;">
+    <img src="images/image1.png">
+    <h1 align="center">智能监控系统</h1>
+    <form action="/cgi-bin/cgi_led.cgi" method="get">
+        <div class="center">
+            <label>
+                LED:
+                <label><input type="radio" name="led_num" value="2" checked>2</label>
+                <label><input type="radio" name="led_num" value="3">3</label>
+                <label><input type="radio" name="led_num" value="4">4</label>
+                <label><input type="radio" name="led_num" value="5">5</label>
+                &nbsp;&nbsp;|&nbsp;
+                <label><input type="radio" name="led_state" value="1" checked>开</label>
+                <label><input type="radio" name="led_state" value="0">关</label>
+                <input type="submit" value="确定" />
+            </label>
+        </div>
+    </form>
+    <form action="/cgi-bin/cgi_buzzer.cgi" method="get">
+        <div class="center">
+            <label>
+                BUZZER:
+                <label><input type="radio" name="buzzer_state" value="1" checked>开</label>
+                <label><input type="radio" name="buzzer_state" value="0">关</label>
+                <input type="submit" value="确定" />
+            </label>
+        </div>
+    </form>
+    <p class="p">数据采集</p>
+    <table class="refresh" height="450" width="300" border="1" align="left">
+        <tr>
+            <td width="432"><iframe src="cgi-bin/cgi_refresh.cgi" height="450" width="500" align="center"></iframe></td>
+        </tr>
+    </table>
+    <a class="button" href="http://192.168.31.90:4747/video" target="container">开启监控</a><br>
+    <iframe class="video" name="container" frameborder="1" width="660" height="500"></iframe><br>
+</body>
+<p class="Copyright">Copyright©1998-2024 SZUCZC All Rights Reserved email:2210295083@email.szu.edu.cn</p>
+</html>
